@@ -5,7 +5,7 @@ from zope.interface import implements, Interface
 from Products.CMFCore.utils import getToolByName
 
 from medialog.simpleslider import simplesliderMessageFactory as _
-#from medialog.simpleslider.settings import SimplesliderSettings
+from medialog.simpleslider.settings import SimplesliderSettings
 from medialog.simpleslider.settings import ISimplesliderSettings
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope.component import getMultiAdapter
@@ -18,13 +18,14 @@ class SliderViewlet(ViewletBase):
     
     implements(ISimplesliderSettings)
     
+
+    
     def update(self):
         super(SliderViewlet, self).update()
         
         #XXX the order in which these are called is important!
         self.images = self.get_images()
         self.image_urls = self.get_image_urls()
-        self.javascript = self.random_image_js()
         self.hasImages = len(self.images) > 0
         
     def get_min_height(self):
@@ -45,27 +46,15 @@ class SliderViewlet(ViewletBase):
             return height
         
     def style(self):
-        return 'min-height:%spx' % self.get_min_height()
+    	""" return max instead of min as described above"""
+        return 'max-height:%spx' % self.get_min_height(), 
         
-    def random_image_js(self):
-        """
-        only reason we're doing it this way is because if the page is cached, you'll never get a new image to show....
-        still shows image if user does not have js
-        could just do it the easy way and not do it through js.  The page will be cached so the image won't be
-        rotated as often--might not be a problem since they hardly ever have more than one image in there anyway...
-        """
-        return """
-            <script type="text/javascript">
-                var image_urls = [%s];
-                jq('#mainImage').append("<img alt='generic banner image' src='" + image_urls[Math.floor(Math.random()*image_urls.length)] + "' />");
-            </script>
-        """ % (
-            ','.join(map(lambda x: '"' + x + '"', self.image_urls))
-        )
         
     def get_images(self):
+        settings = SimplesliderSettings(self.context)
+        imagepaths = settings.imagepaths
         try:
-            image_folder = self.context.unrestrictedTraverse('main-images')
+            image_folder = self.context.unrestrictedTraverse(str(imagepaths))
         except:
             return []
 

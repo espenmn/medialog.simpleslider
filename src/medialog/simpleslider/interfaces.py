@@ -1,13 +1,11 @@
-from zope.interface import Interface, Attribute
+from zope.interface import Interface
 from zope import schema
 from medialog.simpleslider import simplesliderMessageFactory  as _
 from OFS.interfaces import IItem
 
  
 from zope.component import getMultiAdapter
- 
- 
- 
+  
 class ISimplesliderLayer(Interface):
     """
     marker interface for simpleslider layer
@@ -48,10 +46,13 @@ class ISimplesliderUtil(Interface):
 class ISimplesliderSettings(Interface):
     """
     The actual simpleslider settings
+    here we define the image urls
     """
     
-    gallerypath = schema.TextLine(
-        title=_(u"label_width_title_simpleslider_setting", default=u"Which Gallery"),
-        description=_(u"label_width_description_simpleslider_setting", 
-        default=u"The path to the gallery you want to  show."),
-        required=True)
+    imagepaths = schema.TextLine(
+        title=_(u"image_url", 
+            default=u"path to images"),
+    )
+    
+    
+    

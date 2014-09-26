@@ -1,4 +1,5 @@
 	<ul id="slider" class="slider" 
+		tal:attributes="style view/style"
 		tal:condition="view/hasImages" >
         <li tal:repeat="image_url view/image_urls">
               	<img src="" tal:attributes="src image_url"/>
