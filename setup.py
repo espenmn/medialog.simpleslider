@@ -22,7 +22,7 @@ long_description = (
     'Download\n'
     '********\n')
 
-setup(name='medialog..simpleslider',
+setup(name='medialog.simpleslider',
       version=version,
       description="Adds a viewlet to display a slider",
       long_description=long_description,
@@ -35,7 +35,7 @@ setup(name='medialog..simpleslider',
       keywords='',
       author='',
       author_email='',
-      url='http://github.com/espenmn/.simpleslider',
+      url='http://github.com/espenmn/medialog.simpleslider',
       license='gpl',
       packages=find_packages('src'),
       package_dir = {'': 'src'},
