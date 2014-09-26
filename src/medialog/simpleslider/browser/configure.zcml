@@ -16,7 +16,7 @@
     <browser:viewlet
        for="medialog.simpleslider.interfaces.ISimpleslider"
        name="simpleslider"
-       manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+       manager="plone.app.layout.viewlets.interfaces.IAboveContent"
        class=".viewlets.SliderViewlet"
        permission="zope2.View"
        />
