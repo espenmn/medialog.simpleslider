@@ -59,8 +59,10 @@ class SliderViewlet(ViewletBase):
             return [image_folder[id] for id in image_folder.objectIds() if image_folder[id].portal_type == "Image"]
         except:
             tags = settings.tags
+            sort_on = settings.sort_on
+            sort_order = settings.sort_order
             catalog = api.portal.get_tool(name='portal_catalog')
-            tagged_images = catalog(portal_type='Image', Subject=tags, sort_on='id', sort_order='ascending')
+            tagged_images = catalog(portal_type='Image', Subject=tags, sort_on=sort_on, sort_order=sort_order)
             return [image.getObject()for image in tagged_images]
         return []
 

@@ -60,3 +60,22 @@ class ISimplesliderSettings(Interface):
     	required=False, 
     )
     
+    sort_on = schema.Choice(
+            title=_(u"Sort Tags on"),
+            values=(
+                "sortable_title",
+                "created",
+                "getObjPositionInParent",
+                "id",
+                "modified",
+                "path",
+            ),
+    )
+    
+    sort_order = schema.Choice(
+            title=_(u"Sort Order"),
+            values=(
+                "ascending",
+                "descending",
+            ),
+    )
