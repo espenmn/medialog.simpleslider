@@ -53,13 +53,15 @@ class SliderViewlet(ViewletBase):
     def get_images(self):
         settings = SimplesliderSettings(self.context)
         imagepaths = settings.imagepaths
+        tags = settings.tags
         try:
             image_folder = self.context.unrestrictedTraverse(str(imagepaths))
+            return [image_folder[id] for id in image_folder.objectIds() if image_folder[id].portal_type == "Image"]
         except:
-            return []
-
-        return [image_folder[id] for id in image_folder.objectIds() if image_folder[id].portal_type == "Image"]
+        	
         
+        return []
+
     def get_image_urls(self):
         if hasattr(self, 'images') and type(self.images) == list:
             return [image.absolute_url() for image in self.images]

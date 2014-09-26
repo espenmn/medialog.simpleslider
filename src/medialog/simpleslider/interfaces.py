@@ -52,7 +52,11 @@ class ISimplesliderSettings(Interface):
     imagepaths = schema.TextLine(
         title=_(u"image_url", 
             default=u"path to images"),
+            required = False,
     )
     
-    
+    tags =  schema.Choice( title = _(u"Or used Tag"),
+    	vocabulary = "plone.app.vocabularies.Keywords", 
+    	required=False, 
+    )
     
