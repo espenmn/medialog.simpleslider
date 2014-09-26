@@ -44,6 +44,7 @@ setup(name='medialog.simpleslider',
       zip_safe=False,
       install_requires=['setuptools',
       					'plone.app.vocabularies',
+      					'plone.api',
                         ],
       entry_points="""
       # -*- entry_points -*-

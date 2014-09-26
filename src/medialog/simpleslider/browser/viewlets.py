@@ -1,4 +1,5 @@
 from Acquisition import aq_inner
+from plone import api
 from plone.app.layout.viewlets.common import ViewletBase
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope.interface import implements, Interface
@@ -46,20 +47,22 @@ class SliderViewlet(ViewletBase):
             return height
         
     def style(self):
-    	""" return max instead of min as described above"""
+        """ return max instead of min as described above"""
         return 'max-height:%spx' % self.get_min_height(), 
         
         
     def get_images(self):
         settings = SimplesliderSettings(self.context)
         imagepaths = settings.imagepaths
-        tags = settings.tags
+        #catalog.searchResults(Subject=('cats', 'dogs'))
         try:
             image_folder = self.context.unrestrictedTraverse(str(imagepaths))
             return [image_folder[id] for id in image_folder.objectIds() if image_folder[id].portal_type == "Image"]
         except:
-        	
-        
+            tags = settings.tags
+            catalog = api.portal.get_tool(name='portal_catalog')
+            tagged_images = catalog(portal_type='Image', Subject=tags)
+            return [image.getObject()for image in tagged_images]
         return []
 
     def get_image_urls(self):
