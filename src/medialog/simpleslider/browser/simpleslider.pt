@@ -23,8 +23,4 @@ f.index(d("."+j)),a=c-1,c=c+1<w?m+1:0;t(d(this)[0]===B[0]?a:c);b.pager&&n(d(this
 		  });
 		
 		});
-		addToHomescreen({
-   			skipFirstVisit: true,
-   			maxDisplayCount: 1
-		});
 	</script> 	
