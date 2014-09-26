@@ -18,8 +18,18 @@ f.index(d("."+j)),a=c-1,c=c+1<w?m+1:0;t(d(this)[0]===B[0]?a:c);b.pager&&n(d(this
 		
 		  // Slideshow 1
 		  $("#slider").responsiveSlides({
+		      auto: true,             // Boolean: Animate automatically, true or false
+              speed: 800,            // Integer: Speed of the transition, in milliseconds
+              timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+              pager: false,           // Boolean: Show pager, true or false
+              nav: false,             // Boolean: Show navigation, true or false
+              random: false,          // Boolean: Randomize the order of the slides, true or false
+              pause: false,           // Boolean: Pause on hover, true or false
+              pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+              prevText: "Previous",   // String: Text for the "previous" button
+              nextText: "Next",       // String: Text for the "next" button
+              
 		    maxwidth: 800,
-		    speed: 800
 		  });
 		
 		});
