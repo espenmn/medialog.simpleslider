@@ -17,7 +17,7 @@
        for="medialog.simpleslider.interfaces.ISimpleslider"
        name="simpleslider"
        manager="plone.app.layout.viewlets.interfaces.IPortalTop"
-       class=".viewlets.sliderViewlet"
+       class=".viewlets.SliderViewlet"
        permission="zope2.View"
        />
 

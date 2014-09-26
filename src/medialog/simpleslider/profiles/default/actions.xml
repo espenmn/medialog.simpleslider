@@ -2,14 +2,15 @@
 <object name="portal_actions" meta_type="Plone Actions Tool">
     <action-provider name="portal_actions">
 
-        <action title="Enable simpleslider" action_id="enable_gallery" category="object_buttons"
-            url_expr="string:${object_url}/@@enable_gallery" visible="True">
+        <action title="Enable simpleslider" action_id="enable_slider" category="object_buttons"
+            condition_expr="not:object/@@simpleslider_util/enabled"
+            url_expr="string:${object_url}/@@enable_slider" visible="True">
             <permission>medialog.simpleslider: Manage simpleslider settings</permission>
         </action>
 
-        <action title="Disable simpleslider" action_id="disable_gallery" category="object_buttons"
+        <action title="Disable simpleslider" action_id="disable_slider" category="object_buttons"
             condition_expr="object/@@simpleslider_util/enabled"
-            url_expr="string:${object_url}/@@disable_issuu" visible="True">
+            url_expr="string:${object_url}/@@disable_slider" visible="True">
             <permission>medialog.simpleslider: Manage simpleslider settings</permission>
         </action>
  

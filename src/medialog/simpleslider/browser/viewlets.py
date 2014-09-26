@@ -17,9 +17,9 @@ class SliderViewlet(ViewletBase):
     render = ViewPageTemplateFile('simpleslider.pt')
     
     implements(ISimplesliderSettings)
-
-	def update(self):
-        super(SliverViewlet, self).update()
+    
+    def update(self):
+        super(SliderViewlet, self).update()
         
         #XXX the order in which these are called is important!
         self.images = self.get_images()

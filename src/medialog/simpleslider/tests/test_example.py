@@ -3,12 +3,12 @@ import unittest2 as unittest
 from Products.CMFCore.utils import getToolByName
 
 from medialog.simpleslider.testing import\
-    MEDIALOG_GALLERYVIEWLET_INTEGRATION_TESTING
+    MEDIALOG_SLIDERVIEWLET_INTEGRATION_TESTING
 
 
 class TestExample(unittest.TestCase):
 
-    layer = MEDIALOG_GALLERYVIEWLET_INTEGRATION_TESTING
+    layer = MEDIALOG_SLIDERVIWLET_INTEGRATION_TESTING
     
     def setUp(self):
         self.app = self.layer['app']

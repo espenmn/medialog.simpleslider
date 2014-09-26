@@ -3,8 +3,6 @@ from zope import schema
 from medialog.simpleslider import simplesliderMessageFactory  as _
 from OFS.interfaces import IItem
 
-from plone.memoize.instance import memoize
-
  
 from zope.component import getMultiAdapter
  
