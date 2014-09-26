@@ -54,14 +54,13 @@ class SliderViewlet(ViewletBase):
     def get_images(self):
         settings = SimplesliderSettings(self.context)
         imagepaths = settings.imagepaths
-        #catalog.searchResults(Subject=('cats', 'dogs'))
         try:
             image_folder = self.context.unrestrictedTraverse(str(imagepaths))
             return [image_folder[id] for id in image_folder.objectIds() if image_folder[id].portal_type == "Image"]
         except:
             tags = settings.tags
             catalog = api.portal.get_tool(name='portal_catalog')
-            tagged_images = catalog(portal_type='Image', Subject=tags)
+            tagged_images = catalog(portal_type='Image', Subject=tags, sort_on='id', sort_order='ascending')
             return [image.getObject()for image in tagged_images]
         return []
 
