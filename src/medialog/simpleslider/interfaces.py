@@ -149,10 +149,10 @@ class ISimplesliderSettings(Interface):
         required = False,
     )
     
-	maxwidth = schema.Int(
+    maxwidth = schema.Int(
         title=_(u"maxwidth", 
             default=u"Max width"),
         required = False,
-        default=800
+        default=800,
     ) 
     
