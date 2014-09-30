@@ -72,28 +72,20 @@ class SliderViewlet(ViewletBase):
         """get the settings into the javascript"""
         settings = SimplesliderSettings(self.context)
         
-        return """<script>
-        $(function () {
-        
-          // Slideshow 1
-          $("#slider").responsiveSlides({
-              auto: %(auto)s,
-              speed: %(speed)i, 
-              timeout: %(timeout)i,
-              pager: %(pager)s,
-              nav: %(nav)s,
-              random: %(random)s,
-              pause: %(pause)s,
-              pauseControls: %(pauseControls)s,
-              prevText: %(prevText)s,
-              nextText: %(nextText)s,
-              maxwidth: %(maxwidth)i,
-          });
-        
-        });
-    </script>   
-        
-        """ % {
+        return """<script>$(function () {
+    $("#slider").responsiveSlides({
+    maxwidth: %(maxwidth)s,
+    auto: %(auto)i,
+    speed: %(speed)s,
+    timeout: %(timeout)s,
+    pager: %(pager)i,
+    nav: %(nav)i,
+    pause: %(pause)i,
+    pauseControls: %(pausecontrols)i,
+    prevText: '%(prevtext)s',
+    nextText: '%(nexttext)s',
+    });
+});</script>""" % {
               'auto': settings.auto,
               'speed':settings.speed,
               'timeout': settings.timeout,
@@ -101,8 +93,8 @@ class SliderViewlet(ViewletBase):
               'nav': settings.nav,
               'random': settings.random,
               'pause': settings.pause,
-              'pauseControls': settings.pausecontrols,
-              'prevText': settings.prevText,
-              'nextText': settings.nexttext,
+              'pausecontrols': settings.pausecontrols,
+              'prevtext': settings.prevtext,
+              'nexttext': settings.nexttext,
               'maxwidth': settings.maxwidth,
        }
