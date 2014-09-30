@@ -79,3 +79,80 @@ class ISimplesliderSettings(Interface):
                 "descending",
             ),
     )
+    
+    auto = schema.Bool(
+        title=_(u"auto", 
+            default=u"Animate automatically"),
+        required = False,
+        default= True,
+    )
+    
+    speed = schema.Int(
+        title=_(u"speed", 
+            default=u"Speed of the transition, in milliseconds"),
+        required = True,
+        default=800
+    ) 
+    
+    timeout = schema.Int(
+        title=_(u"timeout", 
+            default=u"Time between slide transitions, in milliseconds"),
+        required = True,
+        default= 4000
+    )
+    
+    pager = schema.Bool(
+        title=_(u"pager", 
+            default=u"Show pager"),
+        required = False,
+        default= False,
+    )
+
+    nav = schema.Bool(
+        title=_(u"nav", 
+            default=u"Show navigation"),
+        required = False,
+        default= False,
+    )
+    
+    random = schema.Bool(
+        title=_(u"random", 
+            default=u"Randomize the order of the slides"),
+        required = False,
+        default= False,
+    )
+    
+    
+    pause = schema.Bool(
+        title=_(u"pause", 
+            default=u"Pause on hover"),
+        required = False,
+        default= False,
+    )
+    
+    pausecontrols = schema.Bool(
+        title=_(u"pausecontrols", 
+            default=u"Pause when hovering controls"),
+        required = False,
+        default= True,
+    )
+                      
+    prevtext = schema.TextLine(
+        title=_(u"prev_text", 
+            default=u"Text for the previous button"),
+        required = False,
+    )
+    
+    nexttext = schema.TextLine(
+        title=_(u"next_text", 
+            default=u"Text for the next button"),
+        required = False,
+    )
+    
+	maxwidth = schema.Int(
+        title=_(u"maxwidth", 
+            default=u"Max width"),
+        required = False,
+        default=800
+    ) 
+    

@@ -3,3 +3,4 @@
 Introduction
 ============
 
+A simple slider
