@@ -14,4 +14,4 @@ f.index(d("."+j)),a=c-1,c=c+1<w?m+1:0;t(d(this)[0]===B[0]?a:c);b.pager&&n(d(this
 /* Created by @viljamis [Source: http://responsiveslides.com] [Version 1.32] [jQuery 1.7.1] */
 </script>
 
-<script tal:replace="structure view/javascript">
+<script tal:replace="structure view/javascript"> </script>
