@@ -122,7 +122,6 @@ class ISimplesliderSettings(Interface):
         default= False,
     )
     
-    
     pause = schema.Bool(
         title=_(u"pause", 
             default=u"Pause on hover"),
@@ -137,13 +136,13 @@ class ISimplesliderSettings(Interface):
         default= True,
     )
                       
-    prevtext = schema.TextLine(
+    prevtext = schema.ASCIILine(
         title=_(u"prev_text", 
             default=u"Text for the previous button"),
         required = False,
     )
     
-    nexttext = schema.TextLine(
+    nexttext = schema.ASCIILine(
         title=_(u"next_text", 
             default=u"Text for the next button"),
         required = False,
