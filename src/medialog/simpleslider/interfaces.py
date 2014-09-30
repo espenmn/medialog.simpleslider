@@ -55,7 +55,7 @@ class ISimplesliderSettings(Interface):
             required = False,
     )
     
-    tags =  schema.Choice( title = _(u"Or used Tag"),
+    tags =  schema.Choice( title = _(u"Or use a Tag"),
     	vocabulary = "plone.app.vocabularies.Keywords", 
     	required=False, 
     )
