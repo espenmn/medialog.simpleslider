@@ -20,3 +20,5 @@ src/medialog.simpleslider.egg-info/PKG-INFO
 src/medialog.simpleslider.egg-info/dependency_links.txt
 
 src/medialog.simpleslider.egg-info/requires.txt
+
+*.gz
