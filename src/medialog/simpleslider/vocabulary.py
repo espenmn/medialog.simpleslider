@@ -18,6 +18,7 @@ def ImageSizeVocabulary(context):
 
     if 'imaging_properties' in portal_properties.objectIds():
         sizes = portal_properties.imaging_properties.getProperty('allowed_sizes')
+        sizes += ('original',)
         terms = [ SimpleTerm(value=format_size(pair), token=format_size(pair), title=pair) for pair in sizes ]
         return SimpleVocabulary(terms)
     else:
@@ -25,6 +26,7 @@ def ImageSizeVocabulary(context):
             SimpleTerm('mini', 'mini', u'Mini'),
             SimpleTerm('preview', 'preview', u'Preview'),
             SimpleTerm('large', 'large', u'Large'),
+            SimpleTerm('original', 'original', u'Original'),
         ])  
       
     return SimpleVocabulary(terms)

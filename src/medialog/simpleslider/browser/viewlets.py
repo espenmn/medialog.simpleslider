@@ -67,7 +67,16 @@ class SliderViewlet(ViewletBase):
             return [image.absolute_url() for image in self.images]
         else:
             return []
-
+            
+    def image_size(self):
+        settings = SimplesliderSettings(self.context)
+        size = settings.imagesize
+        image_url_end = ''
+        if size != 'original':
+            image_url_end += '/image_'
+            image_url_end += size
+        return image_url_end
+        
     def javascript(self):
         """get the settings into the javascript"""
         settings = SimplesliderSettings(self.context)
