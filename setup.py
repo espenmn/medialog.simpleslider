@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-This module contains the tool of medialog.simpleslider
+This module contains  medialog.simpleslider
 """
 import os
 from setuptools import setup, find_packages
@@ -9,7 +9,7 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '0.1'
+version = '0.2'
 
 long_description = (
     read('README.txt')
@@ -45,9 +45,9 @@ setup(name='medialog.simpleslider',
         "Topic :: Internet",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='',
-      author='',
-      author_email='',
+      keywords='responsive slider plone diazo',
+      author='Espen Moe-Nilssen',
+      author_email='espen at medialog no',
       url='http://github.com/espenmn/medialog.simpleslider',
       license='gpl',
       packages=find_packages('src'),

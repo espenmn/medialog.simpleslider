@@ -1,7 +1,11 @@
 Changelog
 =========
 
- 
-0.1dev (unreleased)
+0.2dev  
 -------------------
+- Added settings in control panel
  
+
+0.1dev  
+-------------------
+- basics 
