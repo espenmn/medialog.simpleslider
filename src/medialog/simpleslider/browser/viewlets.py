@@ -58,6 +58,7 @@ class SliderViewlet(ViewletBase):
             sort_on = settings.sort_on
             sort_order = settings.sort_order
             catalog = api.portal.get_tool(name='portal_catalog')
+            #tagged_images = catalog(portal_type=('Image', 'News Item'), Subject=tags, sort_on=sort_on, sort_order=sort_order)
             tagged_images = catalog(portal_type='Image', Subject=tags, sort_on=sort_on, sort_order=sort_order)
             return [image.getObject()for image in tagged_images]
         return []
