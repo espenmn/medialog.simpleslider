@@ -73,7 +73,7 @@ class SliderViewlet(ViewletBase):
         size = settings.imagesize
         image_url_end = ''
         if size != 'original':
-            image_url_end += '/image_'
+            image_url_end += '//@@images/image/'
             image_url_end += size
         return image_url_end
         
