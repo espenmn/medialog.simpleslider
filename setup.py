@@ -13,14 +13,6 @@ version = '0.2'
 
 long_description = (
     read('README.txt')
-    + '\n' +
-    'Contributors\n'
-    '************\n'
-    + '\n' +
-    read('CONTRIBUTORS.txt')
-    + '\n' +
-    'Download\n'
-    '********\n')
 
 setup(name='medialog.simpleslider',
       version=version,
