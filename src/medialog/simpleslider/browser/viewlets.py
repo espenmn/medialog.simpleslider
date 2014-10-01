@@ -19,8 +19,6 @@ class SliderViewlet(ViewletBase):
     
     implements(ISimplesliderSettings)
     
-
-    
     def update(self):
         super(SliderViewlet, self).update()
         
@@ -31,9 +29,7 @@ class SliderViewlet(ViewletBase):
         
     def get_min_height(self):
         """
-        Right now if you don't set the min-height on the container,
-        it does a little jarring when the js sets the image.
-        So this prevents it....
+        Get the height of images.
         """
         if not self.hasImages:
             return 0
@@ -47,7 +43,7 @@ class SliderViewlet(ViewletBase):
             return height
         
     def style(self):
-        """ return max instead of min as described above"""
+        """ return max, not sure if this is really needed"""
         return 'max-height:%spx' % self.get_min_height(), 
         
         
@@ -71,3 +67,34 @@ class SliderViewlet(ViewletBase):
             return [image.absolute_url() for image in self.images]
         else:
             return []
+
+    def javascript(self):
+        """get the settings into the javascript"""
+        settings = SimplesliderSettings(self.context)
+        
+        return """<script>$(function () {
+    $("#slider").responsiveSlides({
+    maxwidth: %(maxwidth)s,
+    auto: %(auto)i,
+    speed: %(speed)s,
+    timeout: %(timeout)s,
+    pager: %(pager)i,
+    nav: %(nav)i,
+    pause: %(pause)i,
+    pauseControls: %(pausecontrols)i,
+    prevText: '%(prevtext)s',
+    nextText: '%(nexttext)s',
+    });
+});</script>""" % {
+              'auto': settings.auto,
+              'speed':settings.speed,
+              'timeout': settings.timeout,
+              'pager': settings.pager,
+              'nav': settings.nav,
+              'random': settings.random,
+              'pause': settings.pause,
+              'pausecontrols': settings.pausecontrols,
+              'prevtext': settings.prevtext,
+              'nexttext': settings.nexttext,
+              'maxwidth': settings.maxwidth,
+       }
