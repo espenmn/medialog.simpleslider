@@ -80,6 +80,15 @@ class ISimplesliderSettings(Interface):
             ),
     )
     
+    
+    imagesize = schema.Choice(
+    	title=_(u"imagesize", default=u"image Size"),
+    	vocabulary = 'medialog.simpleslider.ImageSizeVocabulary',
+    	required = True,
+    	description=_(u"help_imagesize",
+    		default=u"Set  size for image")
+    	)
+    
     auto = schema.Bool(
         title=_(u"auto", 
             default=u"Animate automatically"),

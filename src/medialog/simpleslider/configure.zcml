@@ -22,7 +22,7 @@
       
   <utility
     component=".vocabulary.ImageSizeVocabulary"
-    name="medialog.newsitemview.ImageSizeVocabulary" />
+    name="medialog.simpleslider.ImageSizeVocabulary" />
   
   <!-- -*- extra stuff goes here -*- -->
 
