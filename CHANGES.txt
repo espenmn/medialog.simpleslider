@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.3dev  
+-------------------
+- Added settings for zettwerk.mobiletheming
+
+
 0.2dev  
 -------------------
 - Added settings in control panel
