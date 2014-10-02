@@ -4,6 +4,7 @@ Changelog
 0.3dev  
 -------------------
 - Added settings for zettwerk.mobiletheming
+- moved js to browser resource and added CSS
 
 
 0.2dev  

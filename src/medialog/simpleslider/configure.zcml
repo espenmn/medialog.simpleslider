@@ -23,7 +23,5 @@
   <utility
     component=".vocabulary.ImageSizeVocabulary"
     name="medialog.simpleslider.ImageSizeVocabulary" />
-  
-  <!-- -*- extra stuff goes here -*- -->
 
 </configure>

@@ -53,6 +53,9 @@
     class=".forms.SimplesliderSettingsForm"
         layer="medialog.simpleslider.interfaces.ISimplesliderLayer"
     permission="zope2.View"/>
+    
+  <browser:resource name="responsiveslides.min.js" file="files/responsiveslides.min.js" />
+  <browser:resource name="responsiveslides.css" file="files/responsiveslides.css" />
      
   <adapter 
     for="medialog.simpleslider.interfaces.ISimpleslider"

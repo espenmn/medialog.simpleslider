@@ -12,7 +12,7 @@ def read(*rnames):
 version = '0.3'
 
 long_description = (
-    read('README.txt')
+    read('README.txt'))
 
 setup(name='medialog.simpleslider',
       version=version,
