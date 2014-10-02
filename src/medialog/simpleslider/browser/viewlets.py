@@ -77,9 +77,12 @@ class SliderViewlet(ViewletBase):
         settings = SimplesliderSettings(self.context)
         size = settings.imagesize
         image_url_end = ''
-        active = getMultiAdapter((request.get('PUBLISHED', None), request),
+        try:
+            active = getMultiAdapter((request.get('PUBLISHED', None), request),
                                  name='zettwerk_mobiletheming_transform') \
-            ._getActive()
+                ._getActive()
+        except:
+            active = False
         if active:
             mobilesize = settings.mobilesize
             if mobilesize and mobilesize != 'original':
