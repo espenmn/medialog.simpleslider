@@ -13,6 +13,9 @@ from zope.component import getMultiAdapter
 
 from AccessControl import getSecurityManager
 
+from zope.component import getMultiAdapter
+
+
 
 class SliderViewlet(ViewletBase):
     render = ViewPageTemplateFile('simpleslider.pt')
@@ -70,12 +73,23 @@ class SliderViewlet(ViewletBase):
             return []
             
     def image_size(self):
+        request = self.request
         settings = SimplesliderSettings(self.context)
         size = settings.imagesize
         image_url_end = ''
-        if size != 'original':
-            image_url_end += '//@@images/image/'
-            image_url_end += size
+        active = getMultiAdapter((request.get('PUBLISHED', None), request),
+                                 name='zettwerk_mobiletheming_transform') \
+            ._getActive()
+        if active:
+            mobilesize = settings.mobilesize
+            if mobilesize and mobilesize != 'original':
+                image_url_end += '//@@images/image/'
+                image_url_end += mobilesize
+            
+        else:
+            if size and size != 'original':
+                image_url_end += '//@@images/image/'
+                image_url_end += size
         return image_url_end
         
     def javascript(self):

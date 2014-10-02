@@ -56,8 +56,8 @@ class ISimplesliderSettings(Interface):
     )
     
     tags =  schema.Choice( title = _(u"Or use a Tag"),
-    	vocabulary = "plone.app.vocabularies.Keywords", 
-    	required=False, 
+        vocabulary = "plone.app.vocabularies.Keywords", 
+        required=False, 
     )
     
     sort_on = schema.Choice(
@@ -82,12 +82,21 @@ class ISimplesliderSettings(Interface):
     
     
     imagesize = schema.Choice(
-    	title=_(u"imagesize", default=u"image Size"),
-    	vocabulary = 'medialog.simpleslider.ImageSizeVocabulary',
-    	required = True,
-    	description=_(u"help_imagesize",
-    		default=u"Set  size for image")
-    	)
+        title=_(u"imagesize", default=u"image Size"),
+        vocabulary = 'medialog.simpleslider.ImageSizeVocabulary',
+        required = True,
+        description=_(u"help_imagesize",
+            default=u"Set  size for image")
+        )
+    
+    mobilesize = schema.Choice(
+        title=_(u"mobilesize", default=u"image Size for mobile"),
+        vocabulary = 'medialog.simpleslider.ImageSizeVocabulary',
+        required = True,
+        description=_(u"help_mobilesize",
+            default=u"Only works with zettwerk.mobiletheming")
+        )
+    
     
     auto = schema.Bool(
         title=_(u"auto", 
