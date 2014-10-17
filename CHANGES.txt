@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.4
+-------------------
+- Added settings for showing title and description
+
+
 0.3dev  
 -------------------
 - Added settings for zettwerk.mobiletheming

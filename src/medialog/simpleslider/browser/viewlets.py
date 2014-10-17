@@ -27,7 +27,7 @@ class SliderViewlet(ViewletBase):
         
         #XXX the order in which these are called is important!
         self.images = self.get_images()
-        self.image_urls = self.get_image_urls()
+        self.image_list = self.get_image_list()
         self.hasImages = len(self.images) > 0
         
     def get_min_height(self):
@@ -45,6 +45,15 @@ class SliderViewlet(ViewletBase):
                     
             return height
         
+    def showtitle(self):
+        settings = SimplesliderSettings(self.context)
+        return settings.showtitle
+
+    def showdescription(self):
+        settings = SimplesliderSettings(self.context)
+        return settings.showdescription
+        
+
     def style(self):
         """ return max, not sure if this is really needed"""
         return 'max-height:%spx' % self.get_min_height(), 
@@ -66,9 +75,9 @@ class SliderViewlet(ViewletBase):
             return [image.getObject()for image in tagged_images]
         return []
 
-    def get_image_urls(self):
+    def get_image_list(self):
         if hasattr(self, 'images') and type(self.images) == list:
-            return [image.absolute_url() for image in self.images]
+            return [{'url': image.absolute_url(), 'title': image.Title(), 'description': image.Description() } for image in self.images]
         else:
             return []
             
