@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.4.1
+-------------------
+- Added height setting and javascript
+
 0.4
 -------------------
 - Added settings for showing title and description

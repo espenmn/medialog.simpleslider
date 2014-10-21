@@ -121,16 +121,22 @@ class SliderViewlet(ViewletBase):
     prevText: '%(prevtext)s',
     nextText: '%(nexttext)s',
     });
-});</script>""" % {
-              'auto': settings.auto,
-              'speed':settings.speed,
-              'timeout': settings.timeout,
-              'pager': settings.pager,
-              'nav': settings.nav,
-              'random': settings.random,
-              'pause': settings.pause,
+});
+$(window).resize(function(){
+   // Setting the heigth of the slides
+   $('#slider').height($('#slider').width()*%(height)i/100);
+}).resize();
+</script>""" % {
+              'auto'         : settings.auto,
+              'speed'        : settings.speed,
+              'timeout'      : settings.timeout,
+              'pager'        : settings.pager,
+              'nav'          : settings.nav,
+              'random'       : settings.random,
+              'pause'        : settings.pause,
               'pausecontrols': settings.pausecontrols,
-              'prevtext': settings.prevtext,
-              'nexttext': settings.nexttext,
-              'maxwidth': settings.maxwidth,
+              'prevtext'     : settings.prevtext,
+              'nexttext'     : settings.nexttext,
+              'maxwidth'     : settings.maxwidth,
+              'height'       : settings.height,
        }

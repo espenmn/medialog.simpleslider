@@ -187,3 +187,10 @@ class ISimplesliderSettings(Interface):
         default=800,
     ) 
     
+    height = schema.Int(
+        title=_(u"height", 
+            default=u"Height as percentage of width"),
+        required = True,
+        default=67,
+    ) 
+    
