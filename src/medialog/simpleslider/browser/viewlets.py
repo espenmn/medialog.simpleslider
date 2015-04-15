@@ -37,13 +37,15 @@ class SliderViewlet(ViewletBase):
         if not self.hasImages:
             return 0
         else:
-            height = self.images[0].getHeight()
-            for image in self.images[1:]:
-                im_height = image.getHeight()
-                if im_height < height:
-                    height = im_height
-                    
-            return height
+            try:
+                height = self.images[0].getHeight()
+                for image in self.images[1:]:
+                    im_height = image.getHeight()
+                    if im_height < height:
+                        height = im_height
+                return height
+            finally:
+                return 0
         
     def showtitle(self):
         settings = SimplesliderSettings(self.context)
