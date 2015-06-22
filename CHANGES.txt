@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.4.2
+-------------------
+- Wrap text in span
+
+
 0.4.1
 -------------------
 - Added height setting and javascript
