@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.4dev  
+-------------------
+- Better vocabulary (should work with Plone 5)
+- Support for medialog.photobehavior
+
 0.3dev  
 -------------------
 - Added settings for zettwerk.mobiletheming

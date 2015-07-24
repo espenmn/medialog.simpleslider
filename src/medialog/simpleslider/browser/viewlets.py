@@ -13,9 +13,6 @@ from zope.component import getMultiAdapter
 
 from AccessControl import getSecurityManager
 
-from zope.component import getMultiAdapter
-
-
 
 class SliderViewlet(ViewletBase):
     render = ViewPageTemplateFile('simpleslider.pt')
