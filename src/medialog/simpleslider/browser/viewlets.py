@@ -24,7 +24,7 @@ class SliderViewlet(ViewletBase):
         
         #XXX the order in which these are called is important!
         self.images = self.get_images()
-        self.image_urls = self.get_image_urls()
+        self.image_list = self.get_image_list()
         self.hasImages = len(self.images) > 0
         
     def get_min_height(self):
@@ -34,14 +34,25 @@ class SliderViewlet(ViewletBase):
         if not self.hasImages:
             return 0
         else:
-            height = self.images[0].getHeight()
-            for image in self.images[1:]:
-                im_height = image.getHeight()
-                if im_height < height:
-                    height = im_height
-                    
-            return height
+            try:
+                height = self.images[0].getHeight()
+                for image in self.images[1:]:
+                    im_height = image.getHeight()
+                    if im_height < height:
+                        height = im_height
+                return height
+            finally:
+                return 0
         
+    def showtitle(self):
+        settings = SimplesliderSettings(self.context)
+        return settings.showtitle
+
+    def showdescription(self):
+        settings = SimplesliderSettings(self.context)
+        return settings.showdescription
+        
+
     def style(self):
         """ return max, not sure if this is really needed"""
         return 'max-height:%spx' % self.get_min_height(), 
@@ -63,9 +74,9 @@ class SliderViewlet(ViewletBase):
             return [image.getObject()for image in tagged_images]
         return []
 
-    def get_image_urls(self):
+    def get_image_list(self):
         if hasattr(self, 'images') and type(self.images) == list:
-            return [image.absolute_url() for image in self.images]
+            return [{'url': image.absolute_url(), 'title': image.Title(), 'description': image.Description() } for image in self.images]
         else:
             return []
             
@@ -109,16 +120,22 @@ class SliderViewlet(ViewletBase):
     prevText: '%(prevtext)s',
     nextText: '%(nexttext)s',
     });
-});</script>""" % {
-              'auto': settings.auto,
-              'speed':settings.speed,
-              'timeout': settings.timeout,
-              'pager': settings.pager,
-              'nav': settings.nav,
-              'random': settings.random,
-              'pause': settings.pause,
+});
+$(window).resize(function(){
+   // Setting the heigth of the slides
+   $('#slider').height($('#slider').width()*%(height)i/100);
+}).resize();
+</script>""" % {
+              'auto'         : settings.auto,
+              'speed'        : settings.speed,
+              'timeout'      : settings.timeout,
+              'pager'        : settings.pager,
+              'nav'          : settings.nav,
+              'random'       : settings.random,
+              'pause'        : settings.pause,
               'pausecontrols': settings.pausecontrols,
-              'prevtext': settings.prevtext,
-              'nexttext': settings.nexttext,
-              'maxwidth': settings.maxwidth,
+              'prevtext'     : settings.prevtext,
+              'nexttext'     : settings.nexttext,
+              'maxwidth'     : settings.maxwidth,
+              'height'       : settings.height,
        }

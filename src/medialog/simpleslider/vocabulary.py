@@ -7,7 +7,11 @@ from plone import api
 
 from zope.i18nmessageid import MessageFactory
 
+<<<<<<< HEAD
 _ = MessageFactory('medialog.dexterityview')
+=======
+_ = MessageFactory('medialog.simpleslider')
+>>>>>>> origin/master
 
 def format_size(size):
     return "".join(size).split(' ')[0]

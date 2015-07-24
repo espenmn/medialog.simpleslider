@@ -119,6 +119,20 @@ class ISimplesliderSettings(Interface):
         default= 4000
     )
     
+    showtitle = schema.Bool(
+        title=_(u"showtitle", 
+            default=u"Show Image title?"),
+        required = False,
+        default=False,
+    ) 
+    
+    showdescription = schema.Bool(
+        title=_(u"showdescription", 
+            default=u"Show Image description?"),
+        required = False,
+        default=False,
+    ) 
+    
     pager = schema.Bool(
         title=_(u"pager", 
             default=u"Show pager"),
@@ -171,5 +185,12 @@ class ISimplesliderSettings(Interface):
             default=u"Max width"),
         required = False,
         default=800,
+    ) 
+    
+    height = schema.Int(
+        title=_(u"height", 
+            default=u"Height as percentage of width"),
+        required = True,
+        default=67,
     ) 
     
