@@ -10,6 +10,7 @@ from zope.i18nmessageid import MessageFactory
 
 _ = MessageFactory('medialog.simpleslider')
 
+
 def format_size(size):
     return "".join(size).split(' ')[0]
 
