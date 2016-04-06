@@ -26,7 +26,7 @@ def ImageSizeVocabulary(context):
         
     if sizes:
         if not 'original' in sizes:
-        	sizes.update({'original': 'original'}	)
+        	sizes.update({'original': 'original'})
         terms = [ SimpleTerm(value=format_size(pair), token=format_size(pair), title=pair) for pair in sizes ]
       
     return SimpleVocabulary(terms)
