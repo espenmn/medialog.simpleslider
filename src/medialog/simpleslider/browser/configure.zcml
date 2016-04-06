@@ -24,7 +24,7 @@
   <browser:page 
     name="enable_slider"
     for="*"
-    permission="zope2.View"
+    permission="cmf.ManagePortal" 
     allowed_interface="medialog.simpleslider.interfaces.ISimplesliderUtilProtected"
     attribute="enable"
     layer="medialog.simpleslider.interfaces.ISimplesliderLayer"
@@ -33,7 +33,7 @@
   <browser:page 
     name="disable_slider"
     for="*"
-        permission="zope2.View"
+    permission="cmf.ManagePortal" 
     allowed_interface="medialog.simpleslider.interfaces.ISimplesliderUtilProtected"
     attribute="disable"
     layer="medialog.simpleslider.interfaces.ISimplesliderLayer"
@@ -42,7 +42,7 @@
    <browser:page 
      name="simpleslider_util"
      for="*"
-        permission="zope2.View"
+    permission="cmf.ManagePortal" 
      allowed_interface="medialog.simpleslider.interfaces.ISimplesliderUtil"
      layer="medialog.simpleslider.interfaces.ISimplesliderLayer"
      class=".utils.SimplesliderUtil" />
@@ -52,7 +52,7 @@
     for="medialog.simpleslider.interfaces.ISimpleslider"
     class=".forms.SimplesliderSettingsForm"
         layer="medialog.simpleslider.interfaces.ISimplesliderLayer"
-    permission="zope2.View"/>
+    permission="cmf.ManagePortal" />
     
   <browser:resource name="responsiveslides.min.js" file="files/responsiveslides.min.js" />
   <browser:resource name="responsiveslides.css" file="files/responsiveslides.css" />
