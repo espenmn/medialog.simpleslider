@@ -94,13 +94,13 @@ class SliderViewlet(ViewletBase):
         if active:
             mobilesize = settings.mobilesize
             if mobilesize and mobilesize != 'original':
-                image_url_end += '//@@images/image/'
-                image_url_end += mobilesize
+                image_url_end += '/@@images/image/'
+                image_url_end += str(mobilesize)
             
         else:
             if size and size != 'original':
-                image_url_end += '//@@images/image/'
-                image_url_end += size
+                image_url_end += '/@@images/image/'
+                image_url_end += str(size)
         return image_url_end
         
     def javascript(self):

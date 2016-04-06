@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.5  
+-------------------
+- Plone 5
+
+
 0.4dev  
 -------------------
 - Better vocabulary (should work with Plone 5)

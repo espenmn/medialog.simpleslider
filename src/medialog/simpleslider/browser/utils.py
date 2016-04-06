@@ -29,7 +29,7 @@ class SimplesliderUtilProtected(BrowserView):
             alsoProvides(self.context, ISimpleslider)
             self.context.reindexObject(idxs=['object_provides'])
             utils.addPortalMessage("Simpleslider added.")
-            self.request.response.redirect(self.context.absolute_url())
+            self.request.response.redirect(self.context.absolute_url() + '/@@simpleslider_settings')
             
         else:  
             self.request.response.redirect(self.context.absolute_url())

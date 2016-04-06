@@ -21,6 +21,7 @@
       />
       
   <utility
+    provides="zope.schema.interfaces.IVocabularyFactory"
     component=".vocabulary.ImageSizeVocabulary"
     name="medialog.simpleslider.ImageSizeVocabulary" />
 

@@ -24,7 +24,7 @@
   <browser:page 
     name="enable_slider"
     for="*"
-        permission="zope2.View"
+    permission="zope2.View"
     allowed_interface="medialog.simpleslider.interfaces.ISimplesliderUtilProtected"
     attribute="enable"
     layer="medialog.simpleslider.interfaces.ISimplesliderLayer"
